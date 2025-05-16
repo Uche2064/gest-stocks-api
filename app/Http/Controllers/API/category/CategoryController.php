@@ -24,6 +24,7 @@ class CategoryController extends Controller
      */
     public function store(AddOrUpdateCategoryFormRequest $request)
     {
+        
         $validatedData = $request->validated();
         $dbCategory = Category::where('name', $validatedData['name'])->first();
         if ($dbCategory) {
